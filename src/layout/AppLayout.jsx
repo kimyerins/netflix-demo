@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Outlet } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
+import LinkContainer from "react-router-bootstrap";
 
 const AppLayout = () => {
   return (
