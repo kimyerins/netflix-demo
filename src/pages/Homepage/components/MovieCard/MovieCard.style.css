@@ -1,0 +1,5 @@
+.movieCard {height: 22.3958vw; cursor: pointer; transition: all .3s ease;}
+
+@media (max-width: 1024px) {
+  .movieCard {height: 41.9922vw;}
+}
