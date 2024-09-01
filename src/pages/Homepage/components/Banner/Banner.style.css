@@ -1,0 +1,26 @@
+/* common */
+.inner_container {width: 90%; max-width: 1300px; margin: 0 auto; position: relative; height: 100%;}
+
+.banner_container {height: 56.25vw; position: relative;}
+.banner_container .txtbox {width: 70%; display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 20px;}
+.banner_container .txtbox h1 {text-transform: uppercase; font-weight: 700; margin-bottom: 20px;}
+.banner_container .txtbox p {margin-bottom: 0;}
+.banner_container .mySwiper {position: relative; height: 100%;}
+.banner_container .mySwiper .swiper-slide {background-position: center; background-repeat: no-repeat; background-size: cover;}
+.banner_container .mySwiper .swiper-slide::before {content: ''; background: linear-gradient(to top, black,transparent); position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.banner_container .mySwiper .swiper-pagination {position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 9;}
+.banner_container .mySwiper .swiper-pagination .swiper-pagination-bullet {width: 20px; height: 3px; border-radius: 0; margin: 0; opacity: 1; background-color: rgba(255,255,255, .5);}
+.banner_container .mySwiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #fff;}
+.banner_container .mySwiper .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {margin-left: 5px;}
+
+@media (max-width: 767px) {
+  .banner_container {height: 70vw;}
+  .banner_container .txtbox {padding: 1.9557vw; width: 90%;}
+  .banner_container .txtbox h1 {font-size: 3.6506vw; margin-bottom: 1.9557vw;}
+}
+@media (max-width: 480px) {
+  .banner_container {height: 80vw;}
+  .banner_container .txtbox {padding: 2.0833vw;}
+  .banner_container .txtbox h1 {font-size: 5.4167vw; margin-bottom: 3.1250vw;}
+  .banner_container .txtbox p {font-size: 2.9167vw;}
+}
