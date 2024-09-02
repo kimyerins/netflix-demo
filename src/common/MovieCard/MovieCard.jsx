@@ -14,14 +14,23 @@ const MovieCard = ({ movie }) => {
     >
       <div className="overlay">
         <h1>{movie.title}</h1>
-        <ul>
+        <ul className="genre">
           {movie.genre_ids.map((id) => (
-            <li>{id}</li>
+            <li>
+              {id}
+              <span>·</span>
+            </li>
           ))}
         </ul>
-        <div>{movie.vote_average}</div>
-        <div>{movie.popularity}</div>
-        <div>{movie.adult ? "over18" : "under18"}</div>
+        <div className="vote">
+          <span>평균평점 :</span> {movie.vote_average.toFixed(1)}
+        </div>
+        <div className="popular">
+          <span>인기도 :</span> {movie.popularity}
+        </div>
+        <div className={`adult ${movie.adult === "18" ? "" : "all"}`}>
+          {movie.adult ? "18" : "All"}
+        </div>
       </div>
     </div>
   );

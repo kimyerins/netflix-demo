@@ -1,11 +1,10 @@
 import React from "react";
 import { Alert } from "bootstrap";
-import { usePopularMoviesQuery } from "../../../../hooks/userPopularMovies";
-import "./PopularMovieSlide.style.css";
+import { useUpComingMoviesQuery } from "../../../../hooks/userUpComingMovies";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 
-const PopularMovieSlide = () => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
+const UpComingMovieSlide = () => {
+  const { data, isLoading, isError, error } = useUpComingMoviesQuery();
   if (isLoading) {
     return <h1>Loading...</h1>;
   } else if (isError) {
@@ -13,9 +12,9 @@ const PopularMovieSlide = () => {
   }
   return (
     <div className="Wrap popularMovieSlide">
-      <MovieSlider title="인기있는 영화" movies={data.results} />
+      <MovieSlider title="개봉예정 영화" movies={data.results} />
     </div>
   );
 };
 
-export default PopularMovieSlide;
+export default UpComingMovieSlide;

@@ -1,0 +1,8 @@
+.movieSlider_container h3 {padding-left: 60px;}
+.movieSlider_container .swiper {padding: 60px;}
+.movieSlider_container .swiper .swiper-slide {margin-bottom: 20px;}
+.swiper-pagination {bottom: 0 !important;}
+
+@media (max-width: 767px) {
+  .movieSlider_container .swiper {padding: 40px;}
+}
