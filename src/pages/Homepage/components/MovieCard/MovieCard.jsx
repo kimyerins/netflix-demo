@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
       }}
       className="movieCard"
     >
-      <div>
+      <div className="overlay">
         <h1>{movie.title}</h1>
         <ul>
           {movie.genre_ids.map((id) => (

@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import MovieCard from "../MovieCard/MovieCard";
+import "./PopularMovieSlide.style.css";
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -15,7 +16,7 @@ const PopularMovieSlide = () => {
     return <Alert varient="danger">{error.message}</Alert>;
   }
   return (
-    <div>
+    <div className="Wrap popularMovieSlide">
       <h3>Popular Movies</h3>
       <Swiper
         slidesPerView={2}
