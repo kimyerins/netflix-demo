@@ -1,6 +1,6 @@
 .movieCard {height: 0; padding-bottom: 150%; border-radius: 10px; background-size: cover; background-position: center; position: relative; cursor: pointer; transition: all .3s ease;}
 .movieCard:hover {transform: scale(1.2) translateZ(20px); z-index: 2;}
-.overlay {width: 100%; padding: 20px; padding-bottom: 150%; background-color: rgba(0,0,0, .7); opacity: 0; color: #fff; transition: all .3s ease; position: relative; overflow-wrap: break-word;}
+.overlay {width: 100%; padding: 20px; background-color: rgba(0,0,0, .7); opacity: 0; color: #fff; transition: all .3s ease; position: absolute; left: 0; top: 0; height: 100%; overflow-wrap: break-word;}
 .overlay:hover {opacity: 1;}
 .overlay h1 {font-size: 23px; padding-right: 40px; word-break: keep-all;}
 .overlay div {font-size: 16px;}
@@ -16,29 +16,29 @@
 
 
 @media (max-width: 1600px) {
-  .overlay {padding: 1.2500vw; padding-bottom: 150%;}
+  .overlay {padding: 1.2500vw;}
   .overlay h1 {font-size: 1.4375vw; padding-right: 2.5000vw;}
   .overlay .adult {width: 1.8750vw; height: 1.8750vw; line-height: 1.8750vw;  right: 1.2500vw; top: 1.2500vw; font-size: 0.8750vw;}
   .overlay div, .overlay ul li {font-size: 1.0000vw;}
 }
 
 @media (max-width: 1024px) {
-  .overlay {padding: 1.9531vw; padding-bottom: 150%;}
+  .overlay {padding: 1.9531vw;}
   .overlay h1 {font-size: 2.0508vw; padding-right: 3.9063vw;}
   .overlay .adult {width: 2.9297vw; height: 2.9297vw; line-height: 2.9297vw;  right: 1.9531vw; top: 1.9531vw; font-size: 1.3672vw;}
   .overlay div, .overlay ul li {font-size: 1.5625vw;}
-  .overlay ul {padding-bottom: 10px; margin-bottom: 10px;}
+  .overlay ul {padding-bottom: 10px; margin-bottom: 10px; flex-wrap: wrap; gap: 5px;}
 }
 
 @media (max-width: 767px) {
-  .overlay {padding: 2.6076vw; padding-bottom: 150%;}
+  .overlay {padding: 2.6076vw;}
   .overlay h1 {font-size: 2.6076vw; padding-right: 4.5632vw;}
   .overlay .adult {width: 3.2595vw; height: 3.2595vw; line-height: 3.2595vw;  right: 2.6076vw; top: 2.6076vw; font-size: 1.6949vw;}
   .overlay div, .overlay ul li {font-size: 1.9557vw;}
 }
 
 @media (max-width: 480px) {
-  .overlay {padding: 4.1667vw; padding-bottom: 150%;}
+  .overlay {padding: 4.1667vw;}
   .overlay h1 {font-size: 4.1667vw; padding-right: 7.2917vw;}
   .overlay .adult {width: 5.2083vw; height: 5.2083vw; line-height: 5.2083vw;  right: 4.1667vw; top: 4.1667vw; font-size: 2.7083vw;}
   .overlay div, .overlay ul li {font-size: 3.1250vw;}

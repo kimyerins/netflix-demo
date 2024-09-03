@@ -1,17 +1,18 @@
 import React from "react";
 import "./Banner.style.css";
 import { usePopularMoviesQuery } from "../../../../hooks/userPopularMovies";
-import Alert from "react-bootstrap/Alert";
+import { Alert } from "bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import VideoMovie from "./VideoMovie/VideoMovie";
 
-const Banner = () => {
+const Banner = (movie_id) => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log("ddd", data);
   if (isLoading) {
-    <Alert>Loading...</Alert>;
+    <h1>Loading...</h1>;
   } else if (isError) {
     <Alert variant="danger">{error.message}</Alert>;
   }
@@ -42,6 +43,9 @@ const Banner = () => {
               <h1>{data?.results[0].title}</h1>
               <p>{data?.results[0].overview}</p>
             </div>
+            {/* <div className="videoBox">
+              <VideoMovie movie_id={movie_id} />
+            </div> */}
           </div>
         </SwiperSlide>
         <SwiperSlide

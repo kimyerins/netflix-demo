@@ -1,0 +1,13 @@
+.movieContainer {display: flex;}
+.movieContainer .left {width: 30%;}
+.movieContainer .right {width: 70%;display: flex; flex-wrap: wrap; gap: 20px;}
+.movieContainer .movie_box {width: calc((100% - 40px) / 3);}
+
+
+
+
+
+
+
+
+
