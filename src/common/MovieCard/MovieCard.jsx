@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
       className="movieCard"
     >
       <div className="overlay">
-        <h1>{movie.title}</h1>
+        <h1>{movie?.title}</h1>
         <ul className="genre">
           {showGenre(movie.genre_ids).map((id) => (
             <li>

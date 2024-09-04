@@ -1,18 +1,13 @@
 import React from "react";
-import { Alert } from "bootstrap";
+//import { Alert } from "bootstrap";
 import { useVideoMovieQuery } from "../../../../../hooks/useVideoMovies";
 import { ReactPlayer } from "react-player";
+//import YouTube from "react-youtube";
 
-const VideoMovie = (movie_id) => {
-  const { data, videos, isLoading, isError, error } =
-    useVideoMovieQuery(movie_id);
+const VideoMovie = (movieId) => {
+  const { data, videos } = useVideoMovieQuery(movieId);
   console.log("mmm", data);
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  } else if (isError) {
-    return <Alert varient="danger">{error.message}</Alert>;
-  }
-  const video = videos[movie_id];
+  const video = videos[movieId];
   const videoUrl = `https://www.youtube.com/watch?v=${video.key}`;
   return (
     <div className="Wrap video-wrap">

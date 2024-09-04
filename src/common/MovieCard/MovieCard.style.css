@@ -4,7 +4,7 @@
 .overlay:hover {opacity: 1;}
 .overlay h1 {font-size: 23px; padding-right: 40px; word-break: keep-all;}
 .overlay div {font-size: 16px;}
-.overlay ul {padding-left: 0; display: flex; gap: 10px; border-bottom: 1px solid rgba(255,255,255, .4); list-style: none; padding-bottom: 15px; margin-bottom: 15px;}
+.overlay ul {padding-left: 0; display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255,255,255, .4); list-style: none; padding-bottom: 15px; margin-bottom: 15px;}
 .overlay ul li {font-size: 16px;}
 .overlay ul li span {padding-left: 10px; opacity: .7;}
 .overlay ul li:last-child span {display: none;}

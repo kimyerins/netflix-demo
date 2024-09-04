@@ -44,7 +44,7 @@ const Banner = (movie_id) => {
               <p>{data?.results[0].overview}</p>
             </div>
             {/* <div className="videoBox">
-              <VideoMovie movie_id={movie_id} />
+              <VideoMovie movieId={movie_id} />
             </div> */}
           </div>
         </SwiperSlide>
