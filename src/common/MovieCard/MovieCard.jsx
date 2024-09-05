@@ -1,6 +1,7 @@
 import React from "react";
 import "./MovieCard.style.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const { data: genreData } = useMovieGenreQuery();
@@ -12,6 +13,10 @@ const MovieCard = ({ movie }) => {
     });
     return genreNameList;
   };
+  const navigate = useNavigate();
+  const goMovieDetail = () => {
+    navigate(`/movies/${movie.id}`);
+  };
 
   return (
     <div
@@ -22,6 +27,7 @@ const MovieCard = ({ movie }) => {
           ")",
       }}
       className="movieCard"
+      onClick={goMovieDetail}
     >
       <div className="overlay">
         <h1>{movie?.title}</h1>
