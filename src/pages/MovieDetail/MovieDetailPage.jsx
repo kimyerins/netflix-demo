@@ -7,7 +7,7 @@ import MovieDetailReview from "./components/MovieDetailReview";
 const MovieDetailPage = () => {
   const { id } = useParams();
   const { data } = useMovieDetaileQuery({ id });
-  console.log("ddd", data);
+  //console.log("ddd", data);
   return (
     <div
       className="movieDetail-container"

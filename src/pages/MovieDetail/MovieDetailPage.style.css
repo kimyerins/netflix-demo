@@ -1,0 +1,17 @@
+.movieDetail-container {background-repeat: no-repeat; position: relative; background-size: 100%;}
+.movieDetail-container::before {content: ''; background-color: rgba(0,0,0, .5); width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1;}
+.movieDetail-container .dfbox {position: relative; z-index: 1; display: flex; padding: 60px;}
+.movieDetail-container .dfbox .imgbox {border-radius: 20px; overflow: hidden; width: 30%;}
+.movieDetail-container .dfbox .imgbox img {width: 100%;}
+.movieDetail-container .dfbox .txtbox {width: 70%; padding-left: 60px;}
+
+
+
+
+
+
+
+
+
+
+
