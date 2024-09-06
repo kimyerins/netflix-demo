@@ -11,22 +11,21 @@ const MovieDetailPage = () => {
   return (
     <div
       className="movieDetail-container"
-      style={{
+    >
+      <div className="backImage" style={{
         backgroundImage:
           "URL(" +
-          `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${data?.backdrop_path}` +
+          `https://media.themoviedb.org/t/p/original${data?.backdrop_path}` +
           ")",
-      }}
-    >
+      }}></div>
       <div className="dfbox">
         <div className="imgbox">
           <img
-            src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${data?.poster_path}`}
+            src={`https://media.themoviedb.org/t/p/w1280${data?.poster_path}`}
             alt="poster"
           ></img>
         </div>
         <div className="txtbox">
-          <h1>{data?.title}</h1>
           <ul className="genre">
             {data?.genres.map((genre, id) => (
               <li>
@@ -35,20 +34,23 @@ const MovieDetailPage = () => {
               </li>
             ))}
           </ul>
-          <div className="vote">
-            <span>평균평점 :</span> {data?.vote_average.toFixed(1)}
+          <div className="tit">
+            <span className={`adult ${data?.adult === "18" ? "" : "all"}`}>
+              {data?.adult ? "18" : "All"}
+            </span>
+            <h1>{data?.title}</h1>
           </div>
-          <div className="popular">
-            <span>인기도 :</span> {data?.popularity}
+          <div className="vote lists">
+            <div className="title">평균평점</div><p className="cont">{data?.vote_average.toFixed(1)}</p>
           </div>
-          <div className={`adult ${data?.adult === "18" ? "" : "all"}`}>
-            {data?.adult ? "18" : "All"}
+          <div className="popular lists">
+            <div className="title">인기도</div><p className="cont">{data?.popularity}</p>
           </div>
-          <div className="overview">
-            <p>{data?.release_date}</p>
+          <div className="overview lists">
+            <div className="title">개봉일</div><p className="cont">{data?.release_date}</p>
           </div>
-          <div className="overview">
-            <p>{data?.budget?.toLocaleString()}</p>
+          <div className="overview lists">
+            <div className="title">예산</div><p className="cont">{data?.budget?.toLocaleString()}</p>
           </div>
         </div>
       </div>

@@ -19,9 +19,7 @@ const MovieDetailReview = () => {
         <ul>
           {reviews.map((review) => (
             <li key={review.id}>
-              <p>
-                <strong>작성자: {review.author}</strong>
-              </p>
+              <h4>{review.author}</h4>
               <p>{review.content}</p>
             </li>
           ))}

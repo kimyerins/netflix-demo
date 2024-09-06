@@ -1,9 +1,28 @@
-.movieDetail-container {background-repeat: no-repeat; position: relative; background-size: 100%;}
+.movieDetail-container {position: relative;}
 .movieDetail-container::before {content: ''; background-color: rgba(0,0,0, .5); width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1;}
+.movieDetail-container .backImage {height: 80vh; background-position: center; background-repeat: no-repeat; background-size: 100%; position: relative;}
+.movieDetail-container .backImage::before {content: ''; background: linear-gradient(to top, black,transparent); width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
 .movieDetail-container .dfbox {position: relative; z-index: 1; display: flex; padding: 60px;}
 .movieDetail-container .dfbox .imgbox {border-radius: 20px; overflow: hidden; width: 30%;}
 .movieDetail-container .dfbox .imgbox img {width: 100%;}
-.movieDetail-container .dfbox .txtbox {width: 70%; padding-left: 60px;}
+.movieDetail-container .dfbox .txtbox {width: 70%; padding-left: 60px; padding-top: 40px;}
+.movieDetail-container .dfbox .txtbox .genre {display: flex; gap: 10px; padding-left: 0;}
+.movieDetail-container .dfbox .txtbox .genre li span {padding-left: 10px;}
+.movieDetail-container .dfbox .txtbox .genre li:last-child span {display: none;}
+.movieDetail-container .dfbox .txtbox .tit {padding-bottom: 15px; margin-bottom: 15px; padding-left: 40px; border-bottom: 1px solid #777; position: relative;}
+.movieDetail-container .dfbox .txtbox .tit h1 {display: inline-block; margin-bottom: 0; font-size: 40px;}
+.movieDetail-container .dfbox .txtbox .tit span {width: 30px; height: 30px; line-height: 30px; text-align: center; background-color: red; color: #000; border-radius: 50%; font-size: 14px; display: inline-block; position: absolute; left: 0; top: 10px}
+.movieDetail-container .dfbox .txtbox .tit span.all {background-color: yellow;}
+.movieDetail-container .dfbox .txtbox .lists {display: flex;}
+.movieDetail-container .dfbox .txtbox .lists + .lists {margin-top: 10px;}
+.movieDetail-container .dfbox .txtbox .lists .title {width: 80px; color: #999;}
+.movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 80px); margin-bottom: 0;}
+.movieDetail-container .review_wrap {position: relative; z-index: 2; padding: 60px;}
+.movieDetail-container .review_wrap h3 {font-size: 34px; font-weight: 800; padding-left: 20px; margin-bottom: 20px;}
+.movieDetail-container .review_wrap ul {padding-left: 0; display: flex; flex-wrap: wrap; gap: 40px;}
+.movieDetail-container .review_wrap ul li {padding: 40px; background-color: rgba(255,255,255, .2); border-radius: 20px; width: calc((100% - 80px) /3);}
+.movieDetail-container .review_wrap ul li h4 {font-size: 28px; font-weight: 800;}
+.movieDetail-container .review_wrap ul li p {font-size: 18px; font-weight: 300; line-height: 1.4;}
 
 
 
