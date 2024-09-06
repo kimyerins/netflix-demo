@@ -1,14 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
-const fetchVideoMovie = (movie_id) => {
-  return api.get(`/movie/{movie_id}/videos?language=ko-KR`);
+const fetchVideoMovie = async ({id}) => {
+  return await api.get(`/movie/${id}/videos`);
 };
-export const useVideoMovieQuery = (movie_id) => {
+export const useVideoMovieQuery = ({id}) => {
   return useQuery({
-    queryKey: ["movie-video", movie_id],
-    queryFn: () => fetchVideoMovie(movie_id),
+    queryKey: ["movie-video", {id}],
+    queryFn: () => fetchVideoMovie({id}),
     select: (result) => result.data,
-    enabled: !!movie_id,
   });
 };

@@ -1,13 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import "./MovieDetailPage.style.css";
 import { useMovieDetaileQuery } from "../../hooks/useMovieDetail";
 import { useParams } from "react-router-dom";
 import MovieDetailReview from "./components/MovieDetailReview";
+import MovieDetailTrailer from "./components/MovieDetailTrailer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFeatherAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
+
 
 const MovieDetailPage = () => {
   const { id } = useParams();
   const { data } = useMovieDetaileQuery({ id });
-  //console.log("ddd", data);
+  const [activeTab, setActiveTab] = useState('reviews');
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'reviews':
+        return <MovieDetailReview />;
+      case 'trailers':
+        return <MovieDetailTrailer />;
+      default:
+        return null;
+    }
+  };
   return (
     <div
       className="movieDetail-container"
@@ -52,10 +71,26 @@ const MovieDetailPage = () => {
           <div className="overview lists">
             <div className="title">예산</div><p className="cont">{data?.budget?.toLocaleString()}</p>
           </div>
+          <div className="overview">
+            <h4>줄거리</h4>
+            <p>{data?.overview}</p>
+          </div>
         </div>
       </div>
-      <div className="review_wrap">
-        <MovieDetailReview movieId={id} />
+      <div className="datail_bottom">
+        <div className="tabs">
+          <div onClick={() => handleTabClick('reviews')} className={`btn ${activeTab === 'reviews' ? 'active' : ''}`}>
+            <FontAwesomeIcon icon={faFeatherAlt} size="2x" />
+            <p>리뷰</p>
+          </div>
+          <div onClick={() => handleTabClick('trailers')} className={`btn ${activeTab === 'trailers' ? 'active' : ''}`}>
+            <FontAwesomeIcon icon={faPlay} size="2x" />
+            <p>예고편</p>
+          </div>
+        </div>
+        <div className="tab-content">
+          {renderContent()}
+        </div>
       </div>
     </div>
   );
