@@ -34,7 +34,7 @@ const Banner = (movie_id) => {
         <SwiperSlide
           style={{
             backgroundImage: `url(
-          https://media.themoviedb.org/t/p/w533_and_h300_bestv2/${data?.results[0].backdrop_path}
+          https://media.themoviedb.org/t/p/original${data?.results[0].backdrop_path}
           )`,
           }}
         >
@@ -51,7 +51,7 @@ const Banner = (movie_id) => {
         <SwiperSlide
           style={{
             backgroundImage: `url(
-          https://media.themoviedb.org/t/p/w533_and_h300_bestv2/${data?.results[1].backdrop_path}
+          https://media.themoviedb.org/t/p/original${data?.results[1].backdrop_path}
           )`,
           }}
         >
@@ -65,7 +65,7 @@ const Banner = (movie_id) => {
         <SwiperSlide
           style={{
             backgroundImage: `url(
-          https://media.themoviedb.org/t/p/w533_and_h300_bestv2/${data?.results[2].backdrop_path}
+          https://media.themoviedb.org/t/p/original${data?.results[2].backdrop_path}
           )`,
           }}
         >

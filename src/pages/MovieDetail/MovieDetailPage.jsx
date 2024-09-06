@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./MovieDetailPage.style.css";
 import { useMovieDetaileQuery } from "../../hooks/useMovieDetail";
 import { useParams } from "react-router-dom";
@@ -7,11 +7,10 @@ import MovieDetailTrailer from "./components/MovieDetailTrailer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
 
-
 const MovieDetailPage = () => {
   const { id } = useParams();
   const { data } = useMovieDetaileQuery({ id });
-  const [activeTab, setActiveTab] = useState('reviews');
+  const [activeTab, setActiveTab] = useState("reviews");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -19,24 +18,25 @@ const MovieDetailPage = () => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'reviews':
+      case "reviews":
         return <MovieDetailReview />;
-      case 'trailers':
+      case "trailers":
         return <MovieDetailTrailer />;
       default:
         return null;
     }
   };
   return (
-    <div
-      className="movieDetail-container"
-    >
-      <div className="backImage" style={{
-        backgroundImage:
-          "URL(" +
-          `https://media.themoviedb.org/t/p/original${data?.backdrop_path}` +
-          ")",
-      }}></div>
+    <div className="movieDetail-container">
+      <div
+        className="backImage"
+        style={{
+          backgroundImage:
+            "URL(" +
+            `https://media.themoviedb.org/t/p/original${data?.backdrop_path}` +
+            ")",
+        }}
+      ></div>
       <div className="dfbox">
         <div className="imgbox">
           <img
@@ -60,16 +60,20 @@ const MovieDetailPage = () => {
             <h1>{data?.title}</h1>
           </div>
           <div className="vote lists">
-            <div className="title">평균평점</div><p className="cont">{data?.vote_average.toFixed(1)}</p>
+            <div className="title">평균평점</div>
+            <p className="cont">{data?.vote_average.toFixed(1)}</p>
           </div>
           <div className="popular lists">
-            <div className="title">인기도</div><p className="cont">{data?.popularity}</p>
+            <div className="title">인기도</div>
+            <p className="cont">{data?.popularity}</p>
           </div>
-          <div className="overview lists">
-            <div className="title">개봉일</div><p className="cont">{data?.release_date}</p>
+          <div className="date lists">
+            <div className="title">개봉일</div>
+            <p className="cont">{data?.release_date}</p>
           </div>
-          <div className="overview lists">
-            <div className="title">예산</div><p className="cont">{data?.budget?.toLocaleString()}</p>
+          <div className="budget lists">
+            <div className="title">예산</div>
+            <p className="cont">{data?.budget?.toLocaleString()}</p>
           </div>
           <div className="overview">
             <h4>줄거리</h4>
@@ -79,18 +83,22 @@ const MovieDetailPage = () => {
       </div>
       <div className="datail_bottom">
         <div className="tabs">
-          <div onClick={() => handleTabClick('reviews')} className={`btn ${activeTab === 'reviews' ? 'active' : ''}`}>
+          <div
+            onClick={() => handleTabClick("reviews")}
+            className={`btn ${activeTab === "reviews" ? "active" : ""}`}
+          >
             <FontAwesomeIcon icon={faFeatherAlt} size="2x" />
             <p>리뷰</p>
           </div>
-          <div onClick={() => handleTabClick('trailers')} className={`btn ${activeTab === 'trailers' ? 'active' : ''}`}>
+          <div
+            onClick={() => handleTabClick("trailers")}
+            className={`btn ${activeTab === "trailers" ? "active" : ""}`}
+          >
             <FontAwesomeIcon icon={faPlay} size="2x" />
             <p>예고편</p>
           </div>
         </div>
-        <div className="tab-content">
-          {renderContent()}
-        </div>
+        <div className="tab-content">{renderContent()}</div>
       </div>
     </div>
   );

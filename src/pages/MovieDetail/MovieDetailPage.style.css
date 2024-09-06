@@ -3,8 +3,8 @@
 .movieDetail-container .backImage {height: 70vh; background-position: center; background-repeat: no-repeat; background-size: 100%; position: relative;}
 .movieDetail-container .backImage::before {content: ''; background: linear-gradient(to top, black,transparent); width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
 .movieDetail-container .dfbox {position: relative; z-index: 1; display: flex; padding: 60px;}
-.movieDetail-container .dfbox .imgbox {border-radius: 20px; overflow: hidden; width: 30%;}
-.movieDetail-container .dfbox .imgbox img {width: 100%;}
+.movieDetail-container .dfbox .imgbox {width: 30%;}
+.movieDetail-container .dfbox .imgbox img {width: 100%; border-radius: 20px;}
 .movieDetail-container .dfbox .txtbox {width: 70%; padding-left: 60px; padding-top: 40px;}
 .movieDetail-container .dfbox .txtbox .genre {display: flex; gap: 10px; padding-left: 0; font-size: 18px;}
 .movieDetail-container .dfbox .txtbox .genre li span {padding-left: 10px;}
@@ -17,10 +17,20 @@
 .movieDetail-container .dfbox .txtbox .lists + .lists {margin-top: 10px;}
 .movieDetail-container .dfbox .txtbox .lists .title {width: 120px; color: #999;}
 .movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 120px); margin-bottom: 0;}
+.movieDetail-container .dfbox .txtbox .overview {margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255, .7);}
+.movieDetail-container .dfbox .txtbox .overview h4 {font-size: 24px; font-weight: 700; margin-bottom: 15px;}
+.movieDetail-container .dfbox .txtbox .overview p {font-size: 18px; font-weight: 300; line-height: 1.4; word-break: keep-all; width: 90%;}
 .movieDetail-container .datail_bottom {position: relative; z-index: 2; padding: 60px; display: flex;}
-.movieDetail-container .datail_bottom .tabs {width: 400px;}
-.movieDetail-container .datail_bottom .tabs .btn {display: block; text-align: left; color: #fff;}
-.movieDetail-container .datail_bottom .tab-content {width: calc(100% - 400px);}
+.movieDetail-container .datail_bottom .tabs {width: 300px;}
+.movieDetail-container .datail_bottom .tabs .btn {width: 200px; padding: 15px 0; color: #999; display: flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 50px;}
+.movieDetail-container .datail_bottom .tabs .btn p {font-size: 18px; font-weight: 600; margin-bottom: 0;}
+.movieDetail-container .datail_bottom .tabs .btn.active {color: #fff; background-color: #e50914; color: #fff}
+.movieDetail-container .datail_bottom .tabs .btn + .btn {margin-top: 15px;}
+.movieDetail-container .datail_bottom .tabs .btn:hover {color: #e50914;}
+.movieDetail-container .datail_bottom .tabs .btn.active:hover {color: #fff;}
+.movieDetail-container .datail_bottom .tab-content {width: calc(100% - 300px); padding-left: 60px;}
+.movieDetail-container .datail_bottom .tab-content .video-wrap div {width: 100%; height: 0; padding-top: 56.25%; position: relative;}
+.movieDetail-container .datail_bottom .tab-content .video-wrap iframe {width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
 .movieDetail-container .review_wrap {position: relative;}
 .movieDetail-container .review_wrap h3 {font-size: 34px; font-weight: 800; padding-left: 20px; margin-bottom: 20px;}
 .movieDetail-container .review_wrap ul {padding-left: 0; display: flex; flex-wrap: wrap; gap: 40px;}
@@ -29,7 +39,109 @@
 .movieDetail-container .review_wrap ul li p {font-size: 18px; font-weight: 300; line-height: 1.4;}
 
 
+@media (max-width: 1600px) {
+  .movieDetail-container .dfbox .txtbox {padding-left: 3.7500vw; padding-top: 2.5000vw;}
+  .movieDetail-container .dfbox .txtbox .genre { font-size: 1.1250vw;}
+  .movieDetail-container .dfbox .txtbox .tit {padding-bottom: 1.8750vw; margin-bottom: 1.8750vw; padding-left: 2.5000vw;}
+  .movieDetail-container .dfbox .txtbox .tit h1 {font-size: 2.5000vw;}
+  .movieDetail-container .dfbox .txtbox .tit span {width: 1.8750vw; height: 1.8750vw; line-height: 1.8750vw;}
+  .movieDetail-container .dfbox .txtbox .lists {font-size: 1.2500vw;}
+  .movieDetail-container .dfbox .txtbox .lists .title {width: 7.5000vw;}
+  .movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 7.5000vw);}
+  .movieDetail-container .dfbox .txtbox .overview {margin-top: 1.8750vw; padding-top: 1.8750vw;}
+  .movieDetail-container .dfbox .txtbox .overview h4 {font-size: 1.5000vw;  margin-bottom: 0.9375vw;}
+  .movieDetail-container .dfbox .txtbox .overview p {font-size: 1.1250vw;}
+  .movieDetail-container .datail_bottom .tabs {width: 18.7500vw;}
+  .movieDetail-container .datail_bottom .tabs .btn {width: 12.5000vw; padding: 0.9375vw 0;}
+  .movieDetail-container .datail_bottom .tabs .btn p {font-size: 1.1250vw;}
+  .movieDetail-container .datail_bottom .tab-content {width: calc(100% - 18.7500vw); padding-left: 3.7500vw;}
+  .movieDetail-container .review_wrap h3 {font-size: 2.1250vw;}
+  .movieDetail-container .review_wrap ul {gap: 2.5000vw;}
+  .movieDetail-container .review_wrap ul li {padding: 2.5000vw;}
+  .movieDetail-container .review_wrap ul li h4 {font-size: 1.7500vw;}
+  .movieDetail-container .review_wrap ul li p {font-size: 1.1250vw;}
+}
 
+@media (max-width: 1024px) {
+  .movieDetail-container .backImage {height: 60vh;}
+  .movieDetail-container .dfbox .txtbox {padding-left: 4.8828vw; padding-top: 3.4180vw;}
+  .movieDetail-container .dfbox .txtbox .genre { font-size: 1.7578vw;}
+  .movieDetail-container .dfbox .txtbox .tit {padding-bottom: 2.9297vw; margin-bottom: 2.9297vw; padding-left: 3.9063vw;}
+  .movieDetail-container .dfbox .txtbox .tit h1 {font-size: 3.5156vw;}
+  .movieDetail-container .dfbox .txtbox .tit span {width: 2.9297vw; height: 2.9297vw; line-height: 2.9297vw;}
+  .movieDetail-container .dfbox .txtbox .lists {font-size: 1.9531vw;}
+  .movieDetail-container .dfbox .txtbox .lists .title {width: 11.7188vw;}
+  .movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 9.7656vw);}
+  .movieDetail-container .dfbox .txtbox .overview {margin-top: 2.9297vw; padding-top: 2.9297vw;}
+  .movieDetail-container .dfbox .txtbox .overview h4 {font-size: 2.3438vw;  margin-bottom: 1.4648vw;}
+  .movieDetail-container .dfbox .txtbox .overview p {font-size: 1.7578vw;}
+  .movieDetail-container .datail_bottom {flex-direction: column; gap: 30px;}
+  .movieDetail-container .datail_bottom .tab-content {width: 100%;}
+  .movieDetail-container .datail_bottom .tabs {width:100%; display: flex; gap: 10px; align-items: center;}
+  .movieDetail-container .datail_bottom .tabs .btn {width: 16.6484vw; padding: 0.9766vw 0;}
+  .movieDetail-container .datail_bottom .tabs .btn + .btn {margin-top: 0;}
+  .movieDetail-container .datail_bottom .tabs .btn svg {font-size: 26px;}
+  .movieDetail-container .datail_bottom .tabs .btn p {font-size: 1.7578vw;}
+  .movieDetail-container .datail_bottom .tab-content {width: 100%; padding-left: 0;}
+  .movieDetail-container .review_wrap h3 {font-size: 2.9297vw;}
+  .movieDetail-container .review_wrap ul {gap: 2.9297vw; flex-direction: column;}
+  .movieDetail-container .review_wrap ul li {padding: 3.9063vw; width: 100%;}
+  .movieDetail-container .review_wrap ul li h4 {font-size: 2.7344vw;}
+  .movieDetail-container .review_wrap ul li p {font-size: 1.7578vw;}
+}
+
+@media (max-width: 767px) {
+  .movieDetail-container .backImage {height: 42vh;}
+  .movieDetail-container .dfbox, .movieDetail-container .datail_bottom {padding: 40px;}
+  .movieDetail-container .dfbox .imgbox {width: 40%;}
+  .movieDetail-container .dfbox .txtbox {padding-left: 6.5189vw; padding-top: 4.5632vw; width: 60%;}
+  .movieDetail-container .dfbox .txtbox .genre { font-size: 2.3468vw;}
+  .movieDetail-container .dfbox .txtbox .tit {padding-bottom: 3.9113vw; margin-bottom: 3.9113vw; padding-left: 5.2151vw;}
+  .movieDetail-container .dfbox .txtbox .tit h1 {font-size: 4.6936vw;}
+  .movieDetail-container .dfbox .txtbox .tit span {width: 3.9113vw; height: 3.9113vw; line-height: 3.9113vw;}
+  .movieDetail-container .dfbox .txtbox .lists {font-size: 2.6076vw;}
+  .movieDetail-container .dfbox .txtbox .lists .title {width: 15.6454vw;}
+  .movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 13.0378vw);}
+  .movieDetail-container .dfbox .txtbox .overview {margin-top: 3.9113vw; padding-top: 3.9113vw;}
+  .movieDetail-container .dfbox .txtbox .overview h4 {font-size: 3.1291vw;  margin-bottom: 1.9557vw;}
+  .movieDetail-container .dfbox .txtbox .overview p {font-size: 2.3468vw;}
+  .movieDetail-container .datail_bottom .tabs .btn {width: 19.5567vw; padding: 1.3038vw 0;}
+  .movieDetail-container .datail_bottom .tabs .btn p {font-size: 2.3468vw;}
+  .movieDetail-container .review_wrap h3 {font-size: 3.9113vw;}
+  .movieDetail-container .review_wrap ul {gap: 3.9113vw;}
+  .movieDetail-container .review_wrap ul li {padding: 5.2151vw;}
+  .movieDetail-container .review_wrap ul li h4 {font-size: 3.6506vw;}
+  .movieDetail-container .review_wrap ul li p {font-size: 2.3468vw;}
+  .movieDetail-container .datail_bottom .tabs .btn svg {font-size: 3.3898vw;}
+  
+}
+
+@media (max-width: 480px) {
+  .movieDetail-container .backImage {height: 35vh;}
+  .movieDetail-container .dfbox, .movieDetail-container .datail_bottom {padding: 20px;}
+  .movieDetail-container .dfbox {flex-direction: column; gap: 30px;}
+  .movieDetail-container .dfbox .txtbox, .movieDetail-container .dfbox .txtbox {width: 100%; padding-left: 0; padding-top: 0;}
+  .movieDetail-container .dfbox .imgbox {width: 100%;}
+  .movieDetail-container .dfbox .txtbox .genre { font-size: 3.3333vw;}
+  .movieDetail-container .dfbox .txtbox .tit {padding-bottom: 6.2500vw; margin-bottom: 6.2500vw; padding-left: 8.3333vw;}
+  .movieDetail-container .dfbox .txtbox .tit h1 {font-size: 6.6667vw;}
+  .movieDetail-container .dfbox .txtbox .tit span {width: 6.2500vw; height: 6.2500vw; line-height: 6.2500vw;}
+  .movieDetail-container .dfbox .txtbox .lists {font-size: 4.1667vw;}
+  .movieDetail-container .dfbox .txtbox .lists .title {width: 25.0000vw;}
+  .movieDetail-container .dfbox .txtbox .lists .cont {width: calc(100% - 20.8333vw);}
+  .movieDetail-container .dfbox .txtbox .overview {margin-top: 6.2500vw; padding-top: 6.2500vw;}
+  .movieDetail-container .dfbox .txtbox .overview h4 {font-size: 4.5833vw;  margin-bottom: 2.0833vw;}
+  .movieDetail-container .dfbox .txtbox .overview p {font-size: 3.3333vw;}
+  .movieDetail-container .datail_bottom .tabs .btn {width: 31.2500vw; padding: 2.0833vw 0;}
+  .movieDetail-container .datail_bottom .tabs .btn p {font-size: 3.3333vw;}
+  .movieDetail-container .review_wrap h3 {font-size: 5.2333vw;}
+  .movieDetail-container .review_wrap ul {gap: 4.1667vw;}
+  .movieDetail-container .review_wrap ul li {padding: 4.1667vw;}
+  .movieDetail-container .review_wrap ul li h4 {font-size: 4.4000vw;}
+  .movieDetail-container .review_wrap ul li p {font-size: 3.3333vw;}
+  .movieDetail-container .datail_bottom .tabs .btn svg {font-size: 5.4167vw;}
+  
+}
 
 
 
