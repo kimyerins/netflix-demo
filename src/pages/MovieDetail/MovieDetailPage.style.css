@@ -37,6 +37,7 @@
 .movieDetail-container .review_wrap ul li {padding: 40px; background-color: rgba(255,255,255, .2); border-radius: 20px; width: calc((100% - 40px) /2);}
 .movieDetail-container .review_wrap ul li h4 {font-size: 28px; font-weight: 800;}
 .movieDetail-container .review_wrap ul li p {font-size: 18px; font-weight: 300; line-height: 1.4;}
+.movieDetail-container .review_wrap ul li button {font-size: 16px;}
 
 
 @media (max-width: 1600px) {
@@ -60,6 +61,7 @@
   .movieDetail-container .review_wrap ul li {padding: 2.5000vw;}
   .movieDetail-container .review_wrap ul li h4 {font-size: 1.7500vw;}
   .movieDetail-container .review_wrap ul li p {font-size: 1.1250vw;}
+  .movieDetail-container .review_wrap ul li button {font-size: 1.0000vw;}
 }
 
 @media (max-width: 1024px) {
@@ -88,6 +90,7 @@
   .movieDetail-container .review_wrap ul li {padding: 3.9063vw; width: 100%;}
   .movieDetail-container .review_wrap ul li h4 {font-size: 2.7344vw;}
   .movieDetail-container .review_wrap ul li p {font-size: 1.7578vw;}
+  .movieDetail-container .review_wrap ul li button {font-size: 1.5625vw;}
 }
 
 @media (max-width: 767px) {
@@ -113,6 +116,7 @@
   .movieDetail-container .review_wrap ul li h4 {font-size: 3.6506vw;}
   .movieDetail-container .review_wrap ul li p {font-size: 2.3468vw;}
   .movieDetail-container .datail_bottom .tabs .btn svg {font-size: 3.3898vw;}
+  .movieDetail-container .review_wrap ul li button {font-size: 2.0860vw;}
   
 }
 
@@ -140,6 +144,7 @@
   .movieDetail-container .review_wrap ul li h4 {font-size: 4.4000vw;}
   .movieDetail-container .review_wrap ul li p {font-size: 3.3333vw;}
   .movieDetail-container .datail_bottom .tabs .btn svg {font-size: 5.4167vw;}
+  .movieDetail-container .review_wrap ul li button {font-size: 2.9167vw; margin-top: 0;}
   
 }
 

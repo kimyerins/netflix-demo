@@ -21,46 +21,43 @@ const MoviePage = () => {
   const { id } = useParams();
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(1);
-  const keyword = query.get("q");
   const [filter, setFilter] = useState("high");
   const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const keyword = query.get("q");
   const genreParam = query.get("genre");
+  const navigate = useNavigate();
+
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
     page,
   });
-
   const { data: genre } = useMovieGenreQuery({ id });
+
   useEffect(() => {
     setPage(1);
   }, [genreParam]);
 
-  const handlePageClick = ({ selected }) => {
-    setPage(selected + 1);
-  };
+  const handlePageClick = ({ selected }) => setPage(selected + 1);
   const handleGenreClick = (genreId) => {
     setSelectedGenre(genreId);
     navigate(`/movies?genre=${genreId}`);
     setPage(1);
   };
-  const navigate = useNavigate();
-  const filteredItems = data?.results
-    ? data.results.filter(
-        (movie) => !genreParam || movie.genre_ids.includes(selectedGenre)
-      )
-    : [];
-  const sortedItems = filteredItems.sort((a, b) => {
-    if (filter === "high") {
-      return b.popularity - a.popularity;
-    } else {
-      return a.popularity - b.popularity;
-    }
-  });
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  } else if (isError) {
-    return <Alert varient="danger">{error.message}</Alert>;
-  }
+
+  const filteredItems =
+    data?.results?.filter(
+      (movie) => !genreParam || movie.genre_ids.includes(selectedGenre)
+    ) || [];
+
+  const sortedItems = filteredItems.sort((a, b) =>
+    filter === "high"
+      ? b.popularity - a.popularity
+      : a.popularity - b.popularity
+  );
+
+  if (isLoading) return <h1>Loading...</h1>;
+  if (isError) return <Alert variant="danger">{error.message}</Alert>;
 
   console.log("qqq", data);
   return (
@@ -69,6 +66,7 @@ const MoviePage = () => {
         <ul className="genre_list">
           {genre?.map((genre) => (
             <li
+              key={genre.id}
               className={selectedGenre === genre.id ? "active" : ""}
               onClick={() => handleGenreClick(genre.id)}
             >
@@ -81,7 +79,6 @@ const MoviePage = () => {
         <div className="moviePaging">
           <DropdownButton
             id="dropdown-basic-button"
-            value={filter}
             title={filter === "high" ? "인기도 높음" : "인기도 낮음"}
             onChange={(event) => setFilter(event.target.value)}
           >
@@ -94,7 +91,7 @@ const MoviePage = () => {
           </DropdownButton>
           <div className="movieList">
             {keyword && filteredItems.length === 0 && (
-              <p>{keyword}에대한 검색값이 없습니다.</p>
+              <p>{keyword}에 대한 검색 결과가 없습니다.</p>
             )}
             {genreParam && filteredItems.length === 0 && (
               <p>선택한 장르의 영화가 없습니다.</p>

@@ -1,0 +1,5 @@
+.review-content {
+  line-height: 1.5em; transition: all .3s ease;
+}
+
+button {background-color: transparent; border: none; text-decoration: underline; color: #ccc; cursor: pointer; margin-top: 10px;}
