@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
-import { useVideoMovieQuery } from "../../../hooks/useVideoMovies";
+import { useVideoMovieQuery } from "../../../../hooks/useVideoMovies";
 import { Alert } from "bootstrap";
 
 const MovieDetailTrailer = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useMovieReviewQuery } from "../../../hooks/useMovieReview";
+import { useMovieReviewQuery } from "../../../../hooks/useMovieReview";
 import { useParams } from "react-router-dom";
 import { Alert } from "bootstrap";
 import "./MovieDetailReview.style.css";

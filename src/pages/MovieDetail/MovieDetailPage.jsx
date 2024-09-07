@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./MovieDetailPage.style.css";
 import { useMovieDetaileQuery } from "../../hooks/useMovieDetail";
 import { useParams } from "react-router-dom";
-import MovieDetailReview from "./components/MovieDetailReview";
-import MovieDetailTrailer from "./components/MovieDetailTrailer";
-import MovieDetailRecomm from "./components/MovieDetailRecomm";
+import MovieDetailReview from "./components/MovieDetailReview/MovieDetailReview";
+import MovieDetailTrailer from "./components/MovieDetailTrailer/MovieDetailTrailer";
+import MovieDetailRecomm from "./components/MovieDetailRecomm/MovieDetailRecomm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFeatherAlt,

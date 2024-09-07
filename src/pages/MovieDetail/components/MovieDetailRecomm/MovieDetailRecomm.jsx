@@ -1,7 +1,7 @@
 import React from "react";
-import { useMovieRecommendationsQuery } from "../../../hooks/useMovieRecommendations.js";
+import { useMovieRecommendationsQuery } from "../../../../hooks/useMovieRecommendations.js";
 import { useParams } from "react-router-dom";
-import MovieSlider from "../../../common/MovieSlider/MovieSlider.jsx";
+import MovieDetailRecommSlider from "./MovieDetailRecommSlider.jsx";
 import "./MovieDetailRecomm.style.css";
 
 const MovieDetailRecomm = () => {
@@ -15,7 +15,7 @@ const MovieDetailRecomm = () => {
   return (
     <div className="recomm_wrap">
       <div className="movie_box">
-        <MovieSlider title={"추천영화"} movies={data.results} />
+        <MovieDetailRecommSlider title={"추천영화"} movies={data.results} />
       </div>
     </div>
   );
