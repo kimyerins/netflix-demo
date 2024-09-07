@@ -4,6 +4,7 @@ import { useMovieDetaileQuery } from "../../hooks/useMovieDetail";
 import { useParams } from "react-router-dom";
 import MovieDetailReview from "./components/MovieDetailReview";
 import MovieDetailTrailer from "./components/MovieDetailTrailer";
+import MovieDetailRecomm from "./components/MovieDetailRecomm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,6 +23,8 @@ const MovieDetailPage = () => {
         return <MovieDetailReview />;
       case "trailers":
         return <MovieDetailTrailer />;
+      case "recomm":
+        return <MovieDetailRecomm />;
       default:
         return null;
     }
@@ -96,6 +99,13 @@ const MovieDetailPage = () => {
           >
             <FontAwesomeIcon icon={faPlay} size="2x" />
             <p>예고편</p>
+          </div>
+          <div
+            onClick={() => handleTabClick("recomm")}
+            className={`btn ${activeTab === "recomm" ? "active" : ""}`}
+          >
+            <FontAwesomeIcon icon={faPlay} size="2x" />
+            <p>추천영화</p>
           </div>
         </div>
         <div className="tab-content">{renderContent()}</div>

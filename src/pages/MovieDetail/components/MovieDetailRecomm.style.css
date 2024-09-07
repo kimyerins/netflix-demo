@@ -1,0 +1,16 @@
+.recomm_wrap .movieSlider_container {overflow: hidden;}
+.recomm_wrap .movieSlider_container h3 {padding-left: 0 ;padding-bottom: 50px;}
+.recomm_wrap .movieSlider_container .swiper {padding: 0 !important; overflow: visible;}
+
+
+@media (max-width: 1024px) {
+  .recomm_wrap .movieSlider_container .swiper .movieCard {transform: none;}
+}
+
+
+
+
+
+
+
+
