@@ -6,7 +6,11 @@ import MovieDetailReview from "./components/MovieDetailReview";
 import MovieDetailTrailer from "./components/MovieDetailTrailer";
 import MovieDetailRecomm from "./components/MovieDetailRecomm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFeatherAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFeatherAlt,
+  faPlay,
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -104,7 +108,7 @@ const MovieDetailPage = () => {
             onClick={() => handleTabClick("recomm")}
             className={`btn ${activeTab === "recomm" ? "active" : ""}`}
           >
-            <FontAwesomeIcon icon={faPlay} size="2x" />
+            <FontAwesomeIcon icon={faVideo} size="2x" />
             <p>추천영화</p>
           </div>
         </div>
